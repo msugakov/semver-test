@@ -42,3 +42,25 @@ Switching from fast stream to stable stream of the same minor version won't be c
 Just confirming that the micro version is compared numerically not lexicographically:
 
 `4.1.123-fast > 4.1.9`
+
+---
+
+Fast for the next release is greater than the current stable:
+
+`4.5.0-fast.1 > 4.4.0`
+
+Fast for the next release is less than the next stable:
+
+`4.5.0-fast.1 < 4.5.0`
+
+Curious what the result would be:
+
+`4.5.0-fast < 4.5.0-fast.1`
+
+Numeric suffixes participate in comparison:
+
+`4.5.0-fast.1 < 4.5.0-fast.2`
+
+Numeric suffixes get compared as numbers but not lexicographically:
+
+`4.5.0-fast.16 > 4.5.0-fast.2`

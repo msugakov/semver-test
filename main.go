@@ -59,4 +59,21 @@ func main() {
 
 	describe("Just confirming that the micro version is compared numerically not lexicographically")
 	compare("4.1.123-fast", "4.1.9")
+
+	fmt.Println("----------")
+
+	describe("Fast for the next release is greater than the current stable")
+	compare("4.5.0-fast.1", "4.4.0")
+
+	describe("Fast for the next release is less than the next stable")
+	compare("4.5.0-fast.1", "4.5.0")
+
+	describe("Curious what the result would be")
+	compare("4.5.0-fast", "4.5.0-fast.1")
+
+	describe("Numeric suffixes participate in comparison")
+	compare("4.5.0-fast.1", "4.5.0-fast.2")
+
+	describe("Numeric suffixes get compared as numbers but not lexicographically")
+	compare("4.5.0-fast.16", "4.5.0-fast.2")
 }
